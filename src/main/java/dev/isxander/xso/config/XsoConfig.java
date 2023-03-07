@@ -1,5 +1,6 @@
 package dev.isxander.xso.config;
 
+import dev.isxander.xso.XSOForge;
 import dev.isxander.yacl.api.ConfigCategory;
 import dev.isxander.yacl.api.Option;
 import dev.isxander.yacl.config.ConfigEntry;
@@ -7,13 +8,12 @@ import dev.isxander.yacl.config.ConfigInstance;
 import dev.isxander.yacl.config.GsonConfigInstance;
 import dev.isxander.yacl.gui.controllers.BooleanController;
 import dev.isxander.yacl.gui.controllers.TickBoxController;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.text.Text;
 
 public class XsoConfig {
     public static final ConfigInstance<XsoConfig> INSTANCE = new GsonConfigInstance<>(
             XsoConfig.class,
-            FabricLoader.getInstance().getConfigDir().resolve("xanders-sodium-options.json")
+            XSOForge.getConfigDir().resolve("xanders-sodium-options.json")
     );
 
     @ConfigEntry public boolean enabled = true;

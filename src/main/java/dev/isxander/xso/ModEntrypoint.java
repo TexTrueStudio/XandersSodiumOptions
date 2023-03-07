@@ -1,11 +1,10 @@
 package dev.isxander.xso;
 
 import dev.isxander.xso.config.XsoConfig;
-import net.fabricmc.api.ClientModInitializer;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-public class ModEntrypoint implements ClientModInitializer {
-    @Override
-    public void onInitializeClient() {
+public class ModEntrypoint {
+    public static void onInitializeClient(final FMLClientSetupEvent event) {
         XsoConfig.INSTANCE.load();
     }
 }

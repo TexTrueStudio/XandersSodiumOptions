@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+#issueTrackerURL = ""
+license = "LGPL-3.0"
+
+[[mods]]
+modId = "xanders_sodium_options"
+version = "${version}"
+displayName = "TexTrue's Another Rubidium Options"
+displayURL = "https://github.com/TexTrueStudio/XandersSodiumOptions"
+credits = "isXander"
+authors = "TexTrue, ThinkingStudio"
+description = '''
+Rubidium's options menu, but using YACL
+'''
+
+[[dependencies.xanders_sodium_options]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.xanders_sodium_options]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.xanders_sodium_options]]
+modId = "yacl"
+mandatory = true
+ordering = "NONE"
+side = "CLIENT"

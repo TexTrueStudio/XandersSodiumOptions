@@ -88,9 +88,10 @@ public class XandersSodiumOptions {
 
                 categoryBuilder.group(groupBuilder.build());
             }
-
+            /*
             if (Compat.MORE_CULLING)
                 MoreCullingCompat.extendMoreCullingPage(sodiumOptionsGUI, page, categoryBuilder);
+            */
 
             return categoryBuilder.build();
         } catch (Exception e) {
@@ -100,10 +101,12 @@ public class XandersSodiumOptions {
 
     private static <T> Option<?> convertOption(me.jellysquid.mods.sodium.client.gui.options.Option<T> sodiumOption) {
         try {
+            /*
             if (Compat.ENTITY_VIEW_DIST) {
                 Optional<Option<?>> fakeOption = EntityViewDistanceCompat.convertFakeOption(sodiumOption);
                 if (fakeOption.isPresent()) return fakeOption.get();
             }
+            */
 
             if (!(sodiumOption instanceof ClassCapture<?>)) {
                 throw new IllegalStateException("Failed to capture class of sodium option! Likely due to custom Option implementation.");
@@ -113,7 +116,8 @@ public class XandersSodiumOptions {
                     .name(sodiumOption.getName())
                     .tooltip(sodiumOption.getTooltip())
                     .flags(convertFlags(sodiumOption))
-                    .binding(Compat.MORE_CULLING ? MoreCullingCompat.getBinding(sodiumOption) : new SodiumBinding<>(sodiumOption))
+                    //.binding(Compat.MORE_CULLING ? MoreCullingCompat.getBinding(sodiumOption) : new SodiumBinding<>(sodiumOption))
+                    .binding(new SodiumBinding<>(sodiumOption))
                     .available(sodiumOption.isAvailable());
 
             if (sodiumOption.getImpact() != null) {
@@ -123,7 +127,7 @@ public class XandersSodiumOptions {
             addController(builder, sodiumOption);
 
             Option<T> built = builder.build();
-            if (Compat.MORE_CULLING) MoreCullingCompat.addAvailableCheck(built, sodiumOption);
+            //if (Compat.MORE_CULLING) MoreCullingCompat.addAvailableCheck(built, sodiumOption);
             return built;
         } catch (Exception e) {
             if (XsoConfig.INSTANCE.getConfig().lenientOptions) {
@@ -168,10 +172,11 @@ public class XandersSodiumOptions {
         if (Compat.SODIUM_EXTRA && SodiumExtraCompat.convertControl(yaclOption, sodiumOption)) {
             return;
         }
-
+        /*
         if (Compat.MORE_CULLING && MoreCullingCompat.convertControl(yaclOption, sodiumOption)) {
             return;
         }
+        */
 
         throw new IllegalStateException("Unsupported Sodium Controller: " + sodiumOption.getControl().getClass().getName());
     }

@@ -1,5 +1,7 @@
 package dev.isxander.xso.compat;
 
+// More Culling is not forge port!
+/*
 import ca.fxco.moreculling.config.sodium.FloatSliderControl;
 import ca.fxco.moreculling.config.sodium.IntSliderControl;
 import ca.fxco.moreculling.config.sodium.MoreCullingSodiumOptionImpl;
@@ -72,3 +74,4 @@ public class MoreCullingCompat {
         OptionPage getMoreCullingPage();
     }
 }
+ */

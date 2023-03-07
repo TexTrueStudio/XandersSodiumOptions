@@ -1,5 +1,7 @@
 package dev.isxander.xso.compat;
 
+// Entity View Distance is not forge port!
+/*
 import dev.isxander.yacl.api.ButtonOption;
 import dev.isxander.yacl.gui.controllers.ActionController;
 import eu.pb4.entityviewdistance.modcompat.SodiumCompat;
@@ -21,3 +23,4 @@ public class EntityViewDistanceCompat {
         return Optional.empty();
     }
 }
+ */
