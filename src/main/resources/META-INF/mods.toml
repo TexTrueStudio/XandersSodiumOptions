@@ -13,6 +13,7 @@ authors = "TexTrue, ThinkingStudio"
 description = '''
 Rubidium's options menu, but using YACL
 '''
+logoFile = "icon-128x.png"
 
 [[dependencies.xanders_sodium_options]]
 modId = "forge"
@@ -31,5 +32,6 @@ side = "CLIENT"
 [[dependencies.xanders_sodium_options]]
 modId = "yacl"
 mandatory = true
+versionRange = "[1,)"
 ordering = "NONE"
 side = "CLIENT"
