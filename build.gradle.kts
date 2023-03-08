@@ -5,7 +5,7 @@ plugins {
     id("io.github.juuxel.loom-quiltflower") version "1.+"
 }
 
-base.archivesName.set(project.property("archivesBaseName").toString())
+base.archivesName.set("${project.property("archivesBaseName")}-mc1.19.3")
 group = "${project.property("mavenGroup")}"
 version = "${project.property("modVersion")}"
 
@@ -72,8 +72,8 @@ java {
 publishing {
     publications {
         create<MavenPublication>("mod") {
-            groupId = "${rootProject.property("mavenGroup")}"
-            artifactId = "${rootProject.property("archivesBaseName")}"
+            groupId = "${project.property("mavenGroup")}"
+            artifactId = "${project.property("archivesBaseName")}-mc1.19.3"
 
             from(components["java"])
         }
