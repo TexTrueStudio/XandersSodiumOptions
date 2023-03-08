@@ -63,14 +63,6 @@ tasks {
             expand("version" to project.version)
         }
     }
-    
-    remapJar {
-        archiveClassifier.set("fabric-${project.property("minecraftVersion")}")
-    }
-    
-    remapSourcesJar {
-        archiveClassifier.set("fabric-${project.property("minecraftVersion")}-sources")
-    }
 }
 
 java {
